@@ -3,7 +3,7 @@ const questions = [
     src: "assets/song1.mp3",
     options: ["Idol Game", "Tekken"],
     answer: "Idol Game",
-    video: "https://imgur.com/a/arVldTz",
+    video: "assets/video1.mp4",
     details:
       "🎶 The song is Next Life from The Idolm@ster. Composed by Akitaka Tohyama, better known as AJURIKA, and released in 2009. The song is often compared to Karma (Electric Fountain) from Tekken 6 since both have the same composer and was released a few years apart",
   },
