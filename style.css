@@ -1,0 +1,64 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #1d1d1d;
+  color: white;
+  text-align: center;
+  padding: 2em;
+}
+
+.game-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 1em;
+}
+
+.options {
+  margin-top: 1.5em;
+}
+
+button.option-btn {
+  background-color: #333;
+  border: 3px solid #555;
+  color: white;
+  padding: 15px 30px;
+  margin: 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+button.option-btn:hover {
+  background-color: #555;
+}
+
+#feedback {
+  margin-top: 1.5em;
+  font-size: 2em;
+  height: 40px;
+}
+
+#next-btn {
+  margin-top: 1.5em;
+  padding: 16px 32px;
+  font-size: 1.8em;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#video {
+  margin-top: 30px;
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+#details {
+  display: none;
+  font-size: 1.5em;
+  margin-top: 20px;
+  line-height: 1.4;
+}
