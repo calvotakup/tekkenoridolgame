@@ -1,3 +1,1 @@
-[WIP]
-
-Simple music guessing game about Tekken and Idol Games.
+Tekken and The Idolmaster series shares a lot of composers and it's pretty common to see people comparing songs from both series and with that in mind i made this simple song guessing game with Tekken and Idolmaster songs.
