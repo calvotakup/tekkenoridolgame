@@ -5,7 +5,7 @@ const questions = [
     answer: "Idol Game",
     video: "assets/video1.mp4",
     details:
-      "🎶 The song is Next Life from The Idolm@ster. Composed by Akitaka Tohyama, better known as AJURIKA, and released in 2009. The song is often compared to Karma (Electric Fountain) from Tekken 6 since both have the same composer and was released a few years apart",
+      "🎶 The song is Next Life from The Idolm@ster. Composed by Akitaka Tohyama, better known as AJURIKA, and released in 2009. The song is often compared to Karma (Electric Fountain) from Tekken 6 (2007) since both have the same composer.",
   },
   {
     src: "assets/song2.mp3",
@@ -20,21 +20,24 @@ const questions = [
     options: ["Tekken", "Idol Game"],
     answer: "Tekken",
     video: "assets/video3.mp4",
-    details: '🎤 "xxx" placeholder.',
+    details:
+      "🎤 This is a song from Pachi-Slot Tekken composed by Rio Hamamoto. While this song sounds a lot idol-ish he only worked on a few songs for The Idolm@ster series. ",
   },
   {
     src: "assets/song4.mp3",
-    options: ["Wrong Guess 4", "Song Title 4"],
+    options: ["Tekken", "Idol Game"],
     answer: "Idol Game",
     video: "assets/video4.mp4",
-    details: '🏆 "xxx" placeholder',
+    details:
+      "🏆 This is a remix of a song composed by Taku Inoue for the game Idolm@ster Starlit Season. This remix was made by Mifumei, the main composer for Tekken 8. ",
   },
   {
     src: "assets/song5.mp3",
-    options: ["Song Title 5", "Wrong Guess 5"],
+    options: ["Tekken", "Idol Game"],
     answer: "Tekken",
     video: "assets/video5.mp4",
-    details: '💿 "xxx" placeholder.',
+    details:
+      "💿 This song is from the Tekken Pachi-Slot and was composed by Mifumei.",
   },
 ];
 
@@ -47,8 +50,15 @@ const feedback = document.getElementById("feedback");
 const nextBtn = document.getElementById("next-btn");
 const scoreboard = document.getElementById("scoreboard");
 
+function shuffleArray(arr) {
+  return arr.sort(() => Math.random() - 0.5);
+}
+
+// Randomiza as perguntas
+const shuffledQuestions = shuffleArray([...questions]);
+
 function loadQuestion() {
-  const q = questions[current];
+  const q = shuffledQuestions[current];
   audio.src = q.src;
   feedback.textContent = "";
   nextBtn.style.display = "none";
@@ -68,7 +78,7 @@ function loadQuestion() {
 }
 
 function handleAnswer(selected) {
-  const q = questions[current];
+  const q = shuffledQuestions[current];
   const correct = q.answer;
   const buttons = document.querySelectorAll(".option-btn");
 
@@ -96,7 +106,7 @@ function handleAnswer(selected) {
 
 function nextQuestion() {
   current++;
-  if (current < questions.length) {
+  if (current < shuffledQuestions.length) {
     loadQuestion();
   } else {
     showScore();
@@ -108,7 +118,7 @@ function showScore() {
   audio.style.display = "none";
   feedback.textContent = "";
   nextBtn.style.display = "none";
-  scoreboard.innerHTML = `<h2>🎉 Game Over!</h2><p>Your score: ${score}/${questions.length}</p>`;
+  scoreboard.innerHTML = `<h2>🎉 Game Over!</h2><p>Thank you for playing</p>`;
 }
 
 // Shuffle as perguntas
